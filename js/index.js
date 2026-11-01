@@ -45,7 +45,8 @@
             const nombreJugador = jugador.value || jugador.placeholder;
             let jugadorNuevo = {
                 nombre: nombreJugador,
-                puntuacion: 0
+                puntuacion: 0,
+                jugo: false
             }
 
             jugadores.push(jugadorNuevo)
