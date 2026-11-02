@@ -1,6 +1,110 @@
-.formulario-cantidad-espacio {
-    display: none;
+body {
+    background-color: var(--color-page);
 }
+
+main {
+    width: min(100% - 2rem, 42rem);
+    margin: auto;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.info-general,
+.formulario-cantidad-espacio,
+.formulario-jugadores-espacio {
+    width: 100%;
+    padding: 1.5rem;
+    border: 1px solid #342d37;
+    border-radius: 1.25rem;
+    background-color: var(--color-surface);
+    text-align: center;
+}
+
+.info-general h1 {
+    margin: 0 0 1.4rem;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.1;
+    font-weight: 600;
+}
+
+#crear-juego {
+    min-width: 10rem;
+}
+
+.formulario-cantidad-espacio,
 .formulario-jugadores-espacio {
     display: none;
+}
+
+#cantidad-jugadores {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+#formulario-jugadores {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+#cantidad-jugadores input,
+#formulario-jugadores input {
+    width: 100%;
+}
+
+
+
+.jugadorPuntacion {
+    margin: 0.65rem 0;
+    color: var(--color-text);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+@media (min-width: 600px) {
+    main {
+        gap: 1.75rem;
+        padding: 3rem 0;
+    }
+
+    .info-general,
+    .formulario-cantidad-espacio,
+    .formulario-jugadores-espacio {
+        padding: 2rem;
+    }
+
+    #cantidad-jugadores {
+        flex-direction: row;
+    }
+
+    #cantidad-jugadores input[type="number"] {
+        flex: 1 1 0;
+        width: auto;
+        min-width: 0;
+    }
+
+    #cantidad-jugadores input[type="submit"] {
+        width: auto;
+        flex: 0 0 auto;
+    }
+
+    #formulario-jugadores {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #formulario-jugadores input:not([type="submit"]) {
+        flex: 1 1 12rem;
+    }
+
+    #formulario-jugadores input[type="submit"] {
+        flex: 0 0 60%;
+    }
 }

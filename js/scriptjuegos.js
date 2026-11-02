@@ -39,6 +39,12 @@
                 seccionInicio.appendChild(p);
             })
 
+            const a = document.createElement("a");
+            a.href = "../"
+            a.textContent = "Volver al inicio";
+            a.classList.add("enlace")
+            seccionInicio.appendChild(a);
+
 
         } else {
             document.getElementById("bienvenida-jugador").innerHTML = `Turno de: ${jugadorTurno.nombre}`
@@ -57,7 +63,7 @@
     const botonComenzar = document.getElementById("comenzarPreguntas");
     botonComenzar.addEventListener("click", () => {
         seccionInicio.style.display = "none";
-        seccionPreguntas.style.display = "block";
+        seccionPreguntas.style.display = "flex";
     })
     
     let preguntas = []
