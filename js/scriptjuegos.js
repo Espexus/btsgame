@@ -108,7 +108,7 @@
 
         const audio = document.createElement("audio");
         audio.autoplay = true;
-        audio.loop = true;
+        audio.loop = false;
         const source = document.createElement("source");
         source.src = preguntas[indexPregunta].audio;
         source.type = "audio/mpeg"
