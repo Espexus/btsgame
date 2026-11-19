@@ -6,20 +6,20 @@
     
     // vamos a crear aquí las canciones que participan en el concurso 
     preguntasPosibles = [
-        {nombre: "Dynamite", imagen: "../imgs/Dynamite.png"},
-        {nombre: "Butter", imagen: "../imgs/Butter.jpg"},
-        {nombre: "Fake Love", imagen: "../imgs/FakeLove.jpg"},
-        {nombre: "Spring Day", imagen: "../imgs/SpringDay.jpg"},
-        {nombre: "Boy With Luv", imagen: "../imgs/BoyWithLuv.jpg"},
-        {nombre: "DNA", imagen: "../imgs/DNA.jpg"},
-        {nombre: "Blood Sweat & Tears", imagen: "../imgs/BloodSweat&Tears.jpg"},
-        {nombre: "MIC Drop", imagen: "../imgs/MICDrop.jpg"},
-        {nombre: "IDOL", imagen: "../imgs/IDOL.jpg"},
-        {nombre: "Black Swan", imagen: "../imgs/BlackSwan.jpg"},
-        {nombre: "Life Goes On", imagen: "../imgs/LifeGoesOn.jpg"},
-        {nombre: "Fire", imagen: "../imgs/Fire.jpg"},
-        {nombre: "Save Me", imagen: "../imgs/SaveMe.jpg"},
-        {nombre: "Permission to Dance", imagen: "../imgs/PermissiontoDance.png"}
+        {nombre: "Dynamite", imagen: "../imgs/Dynamite.png", audio: "../music/dynamite.mp3"},
+        {nombre: "Butter", imagen: "../imgs/Butter.jpg", audio: "../music/butter.mp3"},
+        {nombre: "Fake Love", imagen: "../imgs/FakeLove.jpg", audio: "../music/fakelove.mp3"},
+        {nombre: "Spring Day", imagen: "../imgs/SpringDay.jpg", audio: "../music/springday.mp3"},
+        {nombre: "Boy With Luv", imagen: "../imgs/BoyWithLuv.jpg", audio: "../music/boywithluv.mp3"},
+        {nombre: "DNA", imagen: "../imgs/DNA.jpg", audio: "../music/dna.mp3"},
+        {nombre: "Blood Sweat & Tears", imagen: "../imgs/BloodSweat&Tears.jpg", audio: "../music/bloodsweat.mp3"},
+        {nombre: "MIC Drop", imagen: "../imgs/MICDrop.jpg", audio: "../music/micdrop.mp3"},
+        {nombre: "IDOL", imagen: "../imgs/IDOL.jpg", audio: "../music/idol.mp3"},
+        {nombre: "Black Swan", imagen: "../imgs/BlackSwan.jpg", audio: "../music/blackswan.mp3"},
+        {nombre: "Life Goes On", imagen: "../imgs/LifeGoesOn.jpg", audio: "../music/lifegoeson.mp3"},
+        {nombre: "Fire", imagen: "../imgs/Fire.jpg", audio: "../music/fire.mp3"},
+        {nombre: "Save Me", imagen: "../imgs/SaveMe.jpg", audio: "../music/saveme.mp3"},
+        {nombre: "Permission to Dance", imagen: "../imgs/PermissiontoDance.png", audio: "../music/permissiontodance.mp3"}
     ]
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -106,8 +106,18 @@
         titulo.textContent = preguntas[indexPregunta].nombre;
         titulo.classList.add("nombre-cancion")
 
+        const audio = document.createElement("audio");
+        audio.autoplay = true;
+        audio.loop = true;
+        const source = document.createElement("source");
+        source.src = preguntas[indexPregunta].audio;
+        source.type = "audio/mpeg"
+        audio.appendChild(source);
+
+
         div.appendChild(imagen);
         div.appendChild(titulo);
+        div.appendChild(audio);
 
         if (indexPregunta >0) {
             seccionPreguntas.querySelector("div").remove();
