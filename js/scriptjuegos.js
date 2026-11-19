@@ -86,7 +86,7 @@
     }
 
     function actualizarPregunta () {
-        if (indexPregunta == 5) {
+        if (indexPregunta == 10) {
             jugadores[jugadores.indexOf(jugadorTurno)].puntuacion = puntaje;
             jugadores[jugadores.indexOf(jugadorTurno)].jugo = true;
 
